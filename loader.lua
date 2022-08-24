@@ -1,6 +1,9 @@
 if not isfolder("illusion") then
   makefolder("illusion")
   makefolder("illusion/bases")
+  local backupUrl = "https://raw.githubusercontent.com/incelsub/uwusion/main/backup"
+  writefile("illusion/8f4UD6py.lua", game:HttpGet(backupUrl .. "/8f4UD6py.lua"))
+  writefile("illusion/e3vwnjPx.lua", game:HttpGet(backupUrl .. "/e3vwnjPx.lua"))
 end
 
 local hooker = getgenv()[string.reverse("noitcnufkooh")]
