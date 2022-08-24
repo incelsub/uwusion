@@ -33,12 +33,12 @@ local oldSynReq; oldSynReq = hooker(syn.request, function(tbl)
     print("intercepting base save request")
     local baseId = string.split(game:GetService("HttpService"):GenerateGUID(false), "-")[1]
     writefile("illusion/bases/" .. baseId .. ".json", tbl.Body)
-    return serialize({
+    return { Body = serialize({
       success = true,
       response = {
         BaseID = baseId
       }
-    })
+    }) }
   end
   if tbl.Url == "https://authillusion.lol/bloxburg/getbase" then
     print("intercepting get base request")
